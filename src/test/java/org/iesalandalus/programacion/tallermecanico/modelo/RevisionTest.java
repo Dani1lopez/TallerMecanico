@@ -1,5 +1,6 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.dominio;
+package org.iesalandalus.programacion.tallermecanico.modelo;
 
+import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,7 +9,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import javax.naming.OperationNotSupportedException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
