@@ -1,6 +1,9 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.dominio;
+package org.iesalandalus.programacion.tallermecanico.modelo;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
+import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Revision;
+import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Vehiculo;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -95,8 +98,8 @@ class RevisionTest {
 
     @Test
     void constructorRevisionValidaCopiaRevisionCorrectamente() {
-        assertDoesNotThrow(() -> revision.anadirHoras(5));
-        assertDoesNotThrow(() -> revision.anadirPrecioMaterial(100));
+        Assertions.assertDoesNotThrow(() -> revision.anadirHoras(5));
+        Assertions.assertDoesNotThrow(() -> revision.anadirPrecioMaterial(100));
         assertDoesNotThrow(() -> revision.cerrar(hoy));
         Revision revisionCopia = new Revision(revision);
         assertNotSame(cliente, revisionCopia.getCliente());
@@ -115,9 +118,9 @@ class RevisionTest {
 
     @Test
     void anadirHorasHorasValidasSumaHorasCorrectamente() {
-        assertDoesNotThrow(() -> revision.anadirHoras(5));
+        Assertions.assertDoesNotThrow(() -> revision.anadirHoras(5));
         assertEquals(5, revision.getHoras());
-        assertDoesNotThrow(() -> revision.anadirHoras(5));
+        Assertions.assertDoesNotThrow(() -> revision.anadirHoras(5));
         assertEquals(10, revision.getHoras());
     }
 
@@ -136,9 +139,9 @@ class RevisionTest {
 
     @Test
     void anadirPrecioMaterialPrecioMaterialValidoSumaPrecioMaterialCorrectamente() {
-        assertDoesNotThrow(() -> revision.anadirPrecioMaterial(100));
+        Assertions.assertDoesNotThrow(() -> revision.anadirPrecioMaterial(100));
         assertEquals(100, revision.getPrecioMaterial());
-        assertDoesNotThrow(() -> revision.anadirPrecioMaterial(100));
+        Assertions.assertDoesNotThrow(() -> revision.anadirPrecioMaterial(100));
         assertEquals(200, revision.getPrecioMaterial());
     }
 
@@ -195,8 +198,8 @@ class RevisionTest {
             "0, 10, 100, 450.0", "1, 10, 100, 460.0", "5, 10, 100, 500.0"})
     void getPrecioCalculaCorrectamentePrecio(int dias, int horas, float precioMaterial, float precio) {
         Revision revisonSemanaPasada = new Revision(cliente, vehiculo, semanaPasada);
-        assertDoesNotThrow(() -> revisonSemanaPasada.anadirHoras(horas));
-        assertDoesNotThrow(() -> revisonSemanaPasada.anadirPrecioMaterial(precioMaterial));
+        Assertions.assertDoesNotThrow(() -> revisonSemanaPasada.anadirHoras(horas));
+        Assertions.assertDoesNotThrow(() -> revisonSemanaPasada.anadirPrecioMaterial(precioMaterial));
         LocalDate fechaFin = semanaPasada.plusDays(dias);
         assertDoesNotThrow(() -> revisonSemanaPasada.cerrar(fechaFin));
         assertEquals(precio, revisonSemanaPasada.getPrecio());
