@@ -1,8 +1,10 @@
 package org.iesalandalus.programacion.tallermecanico.controlador;
 
+import org.iesalandalus.programacion.tallermecanico.modelo.Modelo;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Revision;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Vehiculo;
+import org.iesalandalus.programacion.tallermecanico.vista.Vista;
 
 import javax.naming.OperationNotSupportedException;
 import java.time.LocalDate;
@@ -10,8 +12,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class Controlador {
-    private Vista vista;
-    private Modelo modelo;
+    private final Vista vista;
+    private final Modelo modelo;
 
     public Controlador(Modelo modelo, Vista vista) {
         Objects.requireNonNull(modelo, "El modelo no puede ser nulo.");

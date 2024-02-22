@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.dominio.negocio;
+package org.iesalandalus.programacion.tallermecanico.modelo.negocio;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Revision;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Revisiones {
-    private List<Revision> coleccionRevisiones;
+    private final List<Revision> coleccionRevisiones;
 
     public Revisiones() {
         coleccionRevisiones = new ArrayList<>();

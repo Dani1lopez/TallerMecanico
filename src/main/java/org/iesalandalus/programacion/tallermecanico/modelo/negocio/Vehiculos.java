@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.dominio.negocio;
+package org.iesalandalus.programacion.tallermecanico.modelo.negocio;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Vehiculo;
 
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Vehiculos {
-    private List<Vehiculo> listaVehiculos;
+    private final List<Vehiculo> listaVehiculos;
 
     public Vehiculos() {
         listaVehiculos = new ArrayList<>();

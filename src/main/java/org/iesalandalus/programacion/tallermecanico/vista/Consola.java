@@ -8,7 +8,6 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Random;
 
 public class Consola {
     private String CADENA_FORMATO_FECHA ="\\d{2}/\\d{2}/\\d{4}";
