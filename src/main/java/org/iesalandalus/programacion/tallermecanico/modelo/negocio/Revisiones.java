@@ -77,13 +77,17 @@ public class Revisiones {
         return revision;
     }
     public void anadirHoras(Revision revision, int horas) throws OperationNotSupportedException {
-        getRevision(revision).anadirHoras(horas);
+        Revision revisionEcontrada = getRevision(revision);
+        revisionEcontrada.anadirHoras(horas
+        );
     }
     public void anadirPrecioMaterial(Revision revision, float precioMaterial) throws OperationNotSupportedException {
-        getRevision(revision).anadirPrecioMaterial(precioMaterial);
+      Revision revisionEncontrada = getRevision(revision);
+      revisionEncontrada.anadirPrecioMaterial(precioMaterial);
     }
     public void cerrar(Revision revision, LocalDate fechaFin) throws OperationNotSupportedException {
-        getRevision(revision).cerrar(fechaFin);
+        Revision revisionEncontrada = getRevision(revision);
+        revisionEncontrada.cerrar(fechaFin);
     }
     public void borrar(Revision revision) throws OperationNotSupportedException {
         Objects.requireNonNull(revision, "No se puede borrar una revisión nula.");
